@@ -84,7 +84,7 @@ def porovnej_cisla(tajne_cislo: int, uzivatelsky_tip: int) -> tuple[int, int]:
     # Spočítáme celkový počet společných číslic a pak odečteme býky, abychom dostali jen krávy
     for cislice in set(tip_str): # Projdeme unikátní číslice v uživatelském tipu
         kravy += min(tajne_str.count(cislice), tip_str.count(cislice))
-    kravy -= byci # Odečteme býky, protože jsou také "společnými číslicemi"
+    kravy -= byci
 
     return byci, kravy
 
@@ -137,7 +137,7 @@ def zobraz_pravidla() -> None:
     print("- 'Býci' = správná číslice na správném místě.")
     print("- 'Krávy' = správná číslice, ale na špatném místě.")
     print("\nPojďme začít! Hodně štěstí!\n")
-    sleep(1) # Krátká pauza pro lepší čitelnost
+    sleep(3) # Krátká pauza pro pro udržení pozornosti
 
 
 def hraj_hru() -> None:
@@ -154,7 +154,7 @@ def hraj_hru() -> None:
     zobraz_pravidla()
     
     tajne_cislo = generuj_unikatni_cislo()
-    # Ladící řádek: vypne se pro produkci
+    # Ladící řádek níže: vypne se pro produkci
     # print(f"DEBUG: Tajné číslo je {tajne_cislo}") 
 
     byci, kravy = 0, 0
